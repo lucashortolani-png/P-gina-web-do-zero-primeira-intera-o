@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bandas</title>
+        <title>bandas</title>
         <style>
             header{
                 background-color: rgb(139, 238, 205);
@@ -13,25 +13,44 @@
                 text-align: center;
                 max-width: 800px;
                 margin:0 auto;
+                padding: 16px;
             }
             main{
-                background-color: black;
+                background-color: rgb(255, 255, 255);
                 color: rgb(35, 134, 101);
                 max-width: 800px;
                 margin:0 auto;
+                padding: 16px;
+            }
+            p{
+                font-weight: bold;
             }
         </style>
     </head>
     <body>
         <header>
-            <h1>Grupos musicais</h1>
-            <p>Curiosidades gerais sobre meus quatro grupos favoritos</p>
-            <h2>Por: Lucas</h2>
+            <h1>Bandas</h1>
+            <p>Curiosidades gerais sobre minhas três bandas favoritas</p>
+            <p>Por: Lucas</p>
         </header>
         </main>
-        <h2>Linkin Park</h2>
-        <p>É uma banda de rock e </p>
+        <div>
+            <h2>Linkin Park</h2>
+            <p>É uma banda de rock e </p>
+            <button>🖤<span></span></button>
+        </div>
+
         <main>
-            
     </body>
+    <script>
+     const botao = document.querySelector("button");
+     botao.addEventListener("click, botaoClicado");
+
+    function botaoClicado(){
+        console.log("fui clicado");
+        let texto = botao.querySelector("span");
+        texto.textContent++;
+    }
+
+    </script>
     </html>
