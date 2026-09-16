@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -12,18 +11,19 @@
                 color: black;
                 text-align: center;
                 max-width: 800px;
-                margin:0 auto;
+                margin: 0 auto;
                 padding: 16px;
             }
             main{
                 background-color: rgb(255, 255, 255);
-                color: rgb(35, 134, 101);
+                color: rgb(27, 122, 90);
                 max-width: 800px;
-                margin:0 auto;
+                margin: 0 auto;
                 padding: 16px;
             }
             article{
                 display: flex;
+                margin-bottom: 20px;
             }
             p{
                 font-weight: bold;
@@ -31,6 +31,11 @@
             img{
                 width: 200px;
                 height: 180px;
+                object-fit: cover;
+                margin-right: 16px;
+            }
+            button {
+                cursor: pointer;
             }
         </style>
     </head>
@@ -40,36 +45,44 @@
             <p>Boas-vindas ao meu blog sobre as músicas, cantores, grupos e bandas que gosto!</p>
             <p>Por: Lucas</p>
         </header>
-        </main>
-        <article>
-            <img src="imagem-lp.png" alt="Imagem do atual Linkin Park">
-            <div>
-                <h2>Linkin Park</h2>
-                <p>Minha banda de rock favorita! Eles possuem músicas que conversam diretamente com os sentimentos de quem está ouvindo.</p>
-                <p>Músicas favoritas: Up From The Bottom, The Emptiness Machine, Crawling.</p>
-                <button>🖤<span></span></button>
-            </div>
-        </article>
-        <article>
-            <img src="imagem-tngbhd.png.jpg" alt="Imagem da logo do The Neighborhood">
-            <div>
-                <h2>The Neighborhood</h2>
-                <p>Eu amo DEMAIS essa banda! Eles têm músicas que são satisfatórias, que dão vontade de ouvir.</p>
-                <p>Músicas favoritas: R.I.P To My Youth, Reflections.</p> 
-                <button>🖤<span></span></button>
-            </div>
-        </article>
+
         <main>
+            <article>
+                <img src="imagem-lp.png" alt="Imagem do atual Linkin Park">
+                <div>
+                    <h2>Linkin Park</h2>
+                    <p>Minha banda de rock favorita! Eles possuem músicas que conversam diretamente com os sentimentos de quem está ouvindo.</p>
+                    <p>Músicas favoritas: Up From The Bottom, The Emptiness Machine, Crawling.</p>
+                    <button>🖤 <span>0</span></button>
+                </div>
+            </article>
+
+            <article>
+                <img src="imagem-tngbhd.png" alt="Imagem da logo do The Neighborhood">
+                <div>
+                    <h2>The Neighborhood</h2>
+                    <p>Eu amo DEMAIS essa banda! Eles têm músicas que são satisfatórias, que dão vontade de ouvir.</p>
+                    <p>Músicas favoritas: R.I.P To My Youth, Reflections.</p> 
+                    <button>🖤 <span>0</span></button>
+                </div>
+            </article>
+        </main>
+
+        <script>
+            const botoes = document.querySelectorAll("button");
+
+            botoes.forEach(botao => {
+                botao.addEventListener("click", botaoClicado);
+            });
+
+            function botaoClicado(event) {
+                const botaoAtual = event.currentTarget;
+                const texto = botaoAtual.querySelector("span");
+
+                let contador = parseInt(texto.textContent) || 0;
+                contador++;
+                texto.textContent = contador;
+            }
+        </script>
     </body>
-    <script>
-     const botao = document.querySelector("button");
-     botao.addEventListener("click", botaoClicado);
-
-    function botaoClicado(){
-        console.log("fui clicado");
-        let texto = botao.querySelector("span");
-        texto.textContent++;
-    }
-
-    </script>
-    </html>
+</html>
