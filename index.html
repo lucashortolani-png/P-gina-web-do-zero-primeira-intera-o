@@ -5,39 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>blogluc</title>
-        <style>
-            header{
-                background-color: rgb(139, 238, 205);
-                color: black;
-                text-align: center;
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 16px;
-            }
-            main{
-                background-color: rgb(255, 255, 255);
-                color: rgb(27, 122, 90);
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 16px;
-            }
-            article{
-                display: flex;
-                margin-bottom: 20px;
-            }
-            p{
-                font-weight: bold;
-            }
-            img{
-                width: 200px;
-                height: 180px;
-                object-fit: cover;
-                margin-right: 16px;
-            }
-            button {
-                cursor: pointer;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
@@ -62,29 +30,14 @@
                 <div>
                     <h2>Stray Kids</h2>
                     <p>Eles são o meu grupo favorito! Fazem mais de SEIS anos que acompanho.</p>
-                    <p>Músicas favoritas: É muito difícil escolher só algumas músicas favoritas diante da infinidade de opções que eles produzem.
-                    <p>Curiosidades: Meu favorito (utt) é o Han! Gosto muito de todos, mas me identifico demais com ele.</p>
+                    <p>Músicas favoritas: É muito difícil escolher só algumas músicas como favoritas diante da infinidade de opções que eles produzem.
+                    <p>Curiosidades: Meu integrante favorito (utt) é o Han! Gosto muito de todos, mas me identifico demais com ele.</p>
                     </p> 
                     <button>🖤 <span>0</span></button>
                 </div>
             </article>
         </main>
 
-        <script>
-            const botoes = document.querySelectorAll("button");
-
-            botoes.forEach(botao => {
-                botao.addEventListener("click", botaoClicado);
-            });
-
-            function botaoClicado(event) {
-                const botaoAtual = event.currentTarget;
-                const texto = botaoAtual.querySelector("span");
-
-                let contador = parseInt(texto.textContent) || 0;
-                contador++;
-                texto.textContent = contador;
-            }
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
