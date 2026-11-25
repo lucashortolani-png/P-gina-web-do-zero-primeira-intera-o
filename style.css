@@ -4,17 +4,38 @@
     --cor-texto: #8f1f1f;
     --cor-contraste: #f3eef7;
     --cor-margem: #f38787;
+    --sombra: 2px 2px 10px grey;
 }
-.tema-escuro{
+
+.tema-escuro {
     --cor-primaria: #e46d6d;
     --cor-fundo: #000000;
     --cor-texto: #cc4646;
     --cor-contraste: #000000;
     --cor-margem: #a51e1e;
+    --sombra: none;
+}
+
+* {
+    transition: background-color 0.3s ease;
+}
+
+.btn-tema-escuro {
+    position: fixed;
+    bottom: 16px; 
+    right: 16px;  
+    font-size: 32px; 
+    padding: 12px;   
+    background-color: var(--cor-primaria); 
+    border-radius: 50%; 
+    border: none; 
+    cursor: pointer; 
 }
 body {
     max-width: 100vw;
     margin: 0;
+
+    font-family: Arial;
 }
 header {
     background-color: var(--cor-primaria);
@@ -35,6 +56,7 @@ main {
 article {
     display: flex;
     border: 1px solid var(--cor-margem);
+    box-shadow: var(--sombra);
     margin: 16px;
     gap: 16px;
     padding: 16px;
